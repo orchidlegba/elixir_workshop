@@ -5,7 +5,7 @@ defmodule SwitchOFF do
 	defstruct state: :off
 end
 
-# example FP  Sum type
+# example FP Sum type
 defmodule SwitchBox do
 	def toggle(%SwitchON{} = _switchState ), do: %SwitchOFF{}
 	def toggle(%SwitchOFF{} = _switchState), do: %SwitchON{}

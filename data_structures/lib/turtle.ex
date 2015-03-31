@@ -57,6 +57,8 @@ defmodule DrawTurtle do
 	def spawn do 
 		%Turtle{position: %Position{xPosition: 10, yPosition: 15}, heading: %Heading{}, penState: %PenUp{} }
 	end
+
+	# Example FP Product Type
 	def turn_right_then_two_steps_forward(%Turtle{} = turtle) do			
 		turtle |> put_pen_down |> turn_right |> step_forward |> step_forward
 	end

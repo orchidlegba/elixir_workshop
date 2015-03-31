@@ -27,6 +27,5 @@ defmodule Main do
 		treeResult = BST.insert 2, treeSeed
 		IO.puts "generate treeSeed -> #{inspect treeSeed, pretty: true}"
 		IO.puts "create binary search tree #{inspect treeResult, pretty: true}"
-
 	end
 end

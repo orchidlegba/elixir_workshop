@@ -5,9 +5,7 @@ end
 defmodule Leaf do 
 	defstruct value: 0, left: :leaf, right: :leaf
 end
-# https://github.com/exercism/xelixir
-# https://github.com/bass3m/play_elixir
-# https://github.com/sophiadavis/BST
+
 defmodule BST do 
 	def seed(value) when is_integer(value) do
 		%Tree{value: value, left: %Leaf{}, right: %Leaf{}} 

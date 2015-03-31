@@ -17,9 +17,9 @@ defmodule Recursion do
 		find_last_item(list, 0)
 	end
 
-	defp contains_number(list, searchItem, currentItemAacc) when is_list(list) and is_integer(searchItem) do
+	defp contains_number(list, searchItem, currentItemAcc) when is_list(list) and is_integer(searchItem) do
 		cond do
-			currentItemAacc == searchItem ->
+			currentItemAcc == searchItem ->
 				true
 			[] == list ->
 				false	
