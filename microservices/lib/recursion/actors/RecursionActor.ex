@@ -24,6 +24,7 @@ defmodule RecursionActor.Server do
 				result = Recursion.find_last_item(inputMessage)				
 				result
 				send originPid, {:ok, result}
+				find_last_item
 		end
 	end
 end
