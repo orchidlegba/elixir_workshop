@@ -17,7 +17,9 @@ defmodule Microservices.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger]
+     #mod: {Transformations.Server, []} #  1) added  startup module for GenServer
+    ]   
   end
 
   # Dependencies can be Hex packages:

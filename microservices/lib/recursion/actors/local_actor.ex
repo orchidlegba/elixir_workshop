@@ -1,8 +1,8 @@
-defmodule RecursionActor.Client do 
+defmodule LocalActor.Client do 
 	require Logger
 
-	def find_last_item(list) when is_list(list) do
-		pid = spawn(RecursionActor.Server, :find_last_item, [])
+	def filter_out_smaller(list) when is_list(list) do
+		pid = spawn(LocalActor.Server, :filter_out_smaller, [])
 		send pid, {:ok, list, self()}
 
 		receive do 
@@ -14,17 +14,17 @@ defmodule RecursionActor.Client do
 
 end
 
-defmodule RecursionActor.Server do 
+defmodule LocalActor.Server do 
 	require Logger
 
-	def find_last_item do 
+	def filter_out_smaller do 
 		receive do 
 			{:ok, inputMessage, originPid} ->
 				Logger.info "#received the inputMessage -> #{inspect inputMessage}"
-				result = Recursion.find_last_item(inputMessage)				
+				result = Transformations.filter_out_smaller(inputMessage)				
 				result
 				send originPid, {:ok, result}
-				find_last_item
+				filter_out_smaller
 		end
 	end
 end
